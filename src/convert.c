@@ -82,7 +82,7 @@ int proc_autopattern(struct MMP_PATTERN *pattern, struct MMP_TRACK *track,long r
  {
   if(note->pos==reltime)
   {
-   printf("Cue %g ",note->val);
+  /* printf("Cue %g ",note->val); */
    if(connection->intptr!=NULL)
     *(connection->intptr)=note->vol;
    if(connection->floatptr!=NULL)
