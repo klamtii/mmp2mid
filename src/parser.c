@@ -160,7 +160,7 @@ int parse_sf2player(struct XML_CONTEXT *kontext,int bassline,struct XML_TOKEN *s
  {
   if(midichannel_drum<0)
   {
-   printf("Midichannel_Drum= %d\n",track->midichannel);
+   /*printf("Midichannel_Drum= %d\n",track->midichannel);*/
    midichannel_drum=track->midichannel;
   }
   else
