@@ -1,0 +1,45 @@
+# Project: mmp2mid
+# Makefile created by Dev-C++ 4.9.9.2
+
+CPP  = g++.exe
+CC   = gcc.exe
+WINDRES = windres.exe
+RES  = 
+OBJ  = src/convert.o src/main.o src/midi.o src/mmp.o src/parser.o src/xml.o $(RES)
+LINKOBJ  = src/convert.o src/main.o src/midi.o src/mmp.o src/parser.o src/xml.o $(RES)
+LIBS =  -L"C:/Dev-Cpp/lib"  
+INCS =  -I"C:/Dev-Cpp/include"  -I"src" 
+CXXINCS =  -I"C:/Dev-Cpp/lib/gcc/mingw32/3.4.2/include"  -I"C:/Dev-Cpp/include/c++/3.4.2/backward"  -I"C:/Dev-Cpp/include/c++/3.4.2/mingw32"  -I"C:/Dev-Cpp/include/c++/3.4.2"  -I"C:/Dev-Cpp/include"  -I"src" 
+BIN  = bin/mmp2mid.exe
+CXXFLAGS = $(CXXINCS)   -x c -fexpensive-optimizations -O1
+CFLAGS = $(INCS)   -x c -fexpensive-optimizations -O1
+RM = rm -f
+
+.PHONY: all all-before all-after clean clean-custom
+
+all: all-before bin/mmp2mid.exe all-after
+
+
+clean: clean-custom
+	${RM} $(OBJ) $(BIN)
+
+$(BIN): $(OBJ)
+	$(CC) $(LINKOBJ) -o "bin\mmp2mid.exe" $(LIBS)
+
+src/convert.o: src/convert.c
+	$(CC) -c src/convert.c -o src/convert.o $(CFLAGS)
+
+src/main.o: src/main.c
+	$(CC) -c src/main.c -o src/main.o $(CFLAGS)
+
+src/midi.o: src/midi.c
+	$(CC) -c src/midi.c -o src/midi.o $(CFLAGS)
+
+src/mmp.o: src/mmp.c
+	$(CC) -c src/mmp.c -o src/mmp.o $(CFLAGS)
+
+src/parser.o: src/parser.c
+	$(CC) -c src/parser.c -o src/parser.o $(CFLAGS)
+
+src/xml.o: src/xml.c
+	$(CC) -c src/xml.c -o src/xml.o $(CFLAGS)
