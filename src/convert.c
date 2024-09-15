@@ -3,6 +3,7 @@
 
 #include "midi.h"
 #include "mmp.h"
+
 /*
 ---------------
 High-Level Functions for MIDI-Output.
